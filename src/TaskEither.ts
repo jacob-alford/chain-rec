@@ -1,3 +1,8 @@
+/**
+ * A ChainRec instance for TaskEither
+ *
+ * @since 1.0.0
+ */
 import type * as ChnRec from 'fp-ts/ChainRec'
 import * as E from 'fp-ts/Either'
 import * as TE from 'fp-ts/TaskEither'

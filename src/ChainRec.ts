@@ -1,3 +1,8 @@
+/**
+ * Utilities for working with `ChainRec` instances.
+ *
+ * @since 1.0.0
+ */
 import type * as ChnRec from 'fp-ts/ChainRec'
 import * as E from 'fp-ts/Either'
 import { constUndefined, tuple } from 'fp-ts/function'

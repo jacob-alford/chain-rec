@@ -1,3 +1,8 @@
+/**
+ * Re-exports chainRec from fp-ts > IO
+ *
+ * @since 1.0.0
+ */
 import { ChainRec } from 'fp-ts/IO'
 
 /**

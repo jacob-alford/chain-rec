@@ -1,3 +1,8 @@
+/**
+ * A ChainRec instance for IOEither
+ *
+ * @since 1.0.0
+ */
 import type * as ChnRec from 'fp-ts/ChainRec'
 import * as E from 'fp-ts/Either'
 import * as IOE from 'fp-ts/IOEither'
