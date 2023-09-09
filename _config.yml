@@ -1,0 +1,13 @@
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: dark
+
+# Enable or disable the site search
+search_enabled: true
+
+# Aux links for the upper right navigation
+aux_links:
+  'Docs':
+    - 'https://jacob-alford.github.io/schemata-ts'
+  "GitHub":
+    - "https://github.com/jacob-alford/schemata-ts"
