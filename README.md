@@ -59,7 +59,7 @@ Chain-rec instances and utilities for fp-ts
 
 # Welcome
 
-`ChainRec` is a typeclass that models tail-recursion in higher kinded types.  However, `fp-ts` only exports instances for `Either`, `Array`, `ReadonlyArray`, `IO`, `Tuple`, and `ReadonlyTuple`.  ChainRec can be particularly useful for effectful types such as Task, Reader, and State which is the purpose of this library, and to export various utilities from [purescrip-tailrec](https://pursuit.purescript.org/packages/purescript-tailrec/6.1.0).
+`ChainRec` is a typeclass that models tail-recursion in higher kinded types.  However, `fp-ts` only exports instances for `Either`, `Array`, `ReadonlyArray`, `IO`, `Tuple`, and `ReadonlyTuple`.  ChainRec can be particularly useful for effectful types such as Task, Reader, and State which is the purpose of this library, and to export various utilities from [purescript-tailrec](https://pursuit.purescript.org/packages/purescript-tailrec/6.1.0).
 
 ## Installation
 
