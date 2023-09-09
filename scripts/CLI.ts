@@ -1,0 +1,27 @@
+import * as child_process from 'child_process'
+import { left, right } from 'fp-ts/Either'
+import type * as TE from 'fp-ts/TaskEither'
+
+export interface CLI {
+  exec: (cmd: string, args?: child_process.ExecOptions) => TE.TaskEither<Error, void>
+}
+
+export const cli: CLI = {
+  exec: (cmd, args) => () =>
+    new Promise(resolve => {
+      child_process.exec(cmd, args, err => {
+        if (err !== null) {
+          return resolve(left(err))
+        }
+
+        return resolve(right(undefined))
+      })
+    }),
+}
+
+export const cliTest: CLI = {
+  exec: (cmd, args) => () => {
+    console.log(cmd, args)
+    return Promise.resolve(right(undefined))
+  },
+}

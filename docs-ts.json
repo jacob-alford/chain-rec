@@ -1,0 +1,14 @@
+{
+  "srcDir": "./temp-docs",
+  "exclude": ["index.ts"],
+  "theme": "just-the-docs/just-the-docs",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "strict": true,
+    "paths": {
+      "schemata-ts": ["./src/index.ts"],
+      "schemata-ts/*": ["./src/*"]
+    }
+  }
+}

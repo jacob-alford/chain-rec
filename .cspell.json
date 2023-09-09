@@ -1,0 +1,40 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/.cache/**",
+    "**/dist/**",
+    "**/.git/**",
+    "**/.cache/**",
+    "**/*.tsbuildinfo",
+    "tmp/",
+    "yarn.lock",
+    "**/yarn-error.log",
+    "**/docs/examples/",
+    "**/docs/modules/*.ts.md",
+    ".vscode",
+    "build",
+    "coverage",
+    "package.json",
+    "scripts",
+    "tests",
+    "tsconfig.build.json",
+    "tsconfig.json",
+    "docs"
+  ],
+  "words": [
+    "bigints",
+    "combinators",
+    "nats",
+    "newtype",
+    "Purescript",
+    "Schemable",
+    "schemables",
+    "struct",
+    "typeclass",
+    "typeclasses",
+    "typeof",
+    "unimplimented"
+  ]
+}

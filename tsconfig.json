@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "allowJs": false,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "moduleResolution": "nodenext",
+    "lib": ["DOM", "ESNext"],
+    "module": "CommonJS",
+    "target": "ESNext",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "schemata-ts": ["./src/index.ts"],
+      "schemata-ts/*": ["./src/*"]
+    }
+  },
+  "exclude": ["build", "dist", "node_modules"]
+}
