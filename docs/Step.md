@@ -66,10 +66,10 @@ Similar to `E.fromPredicate`, but the predicate is negated
 **Signature**
 
 ```ts
-export declare const loopIf: <In, Iterate = In>(
-  shouldLoop: (a: In) => boolean,
-  iterate: (a: In) => Iterate
-) => (a: In) => Step<Iterate, In>
+export declare const loopIf: <Iterant>(
+  shouldLoop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
 ```
 
 Added in v1.0.0
@@ -81,10 +81,10 @@ Alias for `stopIf`
 **Signature**
 
 ```ts
-export declare const loopUnless: <In, Iterate = In>(
-  shouldStop: (a: In) => boolean,
-  iterate: (a: In) => Iterate
-) => (a: In) => Step<Iterate, In>
+export declare const loopUnless: <Iterant>(
+  shouldStop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
 ```
 
 Added in v1.0.0
@@ -96,10 +96,10 @@ Similar to `E.fromPredicate`
 **Signature**
 
 ```ts
-export declare const stopIf: <In, Iterate = In>(
-  shouldStop: (a: In) => boolean,
-  iterate: (a: In) => Iterate
-) => (a: In) => Step<Iterate, In>
+export declare const stopIf: <Iterant>(
+  shouldStop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
 ```
 
 Added in v1.0.0
@@ -111,10 +111,10 @@ Alias for `loopIf`
 **Signature**
 
 ```ts
-export declare const stopUnless: <In, Iterate = In>(
-  shouldLoop: (a: In) => boolean,
-  iterate: (a: In) => Iterate
-) => (a: In) => Step<Iterate, In>
+export declare const stopUnless: <Iterant>(
+  shouldLoop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
 ```
 
 Added in v1.0.0
