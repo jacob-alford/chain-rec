@@ -8,6 +8,6 @@ search_enabled: true
 # Aux links for the upper right navigation
 aux_links:
   'Docs':
-    - 'https://jacob-alford.github.io/schemata-ts'
+    - 'https://jacob-alford.github.io/chain-rec'
   "GitHub":
-    - "https://github.com/jacob-alford/schemata-ts"
+    - "https://github.com/jacob-alford/chain-rec"

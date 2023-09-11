@@ -43,7 +43,7 @@ export const chainRec: ChnRec.ChainRec4<SRTE.URI>['chainRec'] =
 // ---------------------
 
 /**
- * ChainRec for `ReaderEither`
+ * ChainRec for `StateReaderTaskEither`
  *
  * @since 1.0.0
  * @category Instances

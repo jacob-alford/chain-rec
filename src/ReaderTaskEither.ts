@@ -39,7 +39,7 @@ export const chainRec: ChnRec.ChainRec3<RTE.URI>['chainRec'] =
 // ---------------------
 
 /**
- * ChainRec for `ReaderEither`
+ * ChainRec for `ReaderTaskEither`
  *
  * @since 1.0.0
  * @category Instances
