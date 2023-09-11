@@ -1,12 +1,12 @@
 ---
-title: TaskEither.ts
-nav_order: 19
-permalink: /task-either/
+title: StateEither.ts
+nav_order: 13
+permalink: /state-either/
 ---
 
-## TaskEither overview
+## StateEither overview
 
-A ChainRec instance for TaskEither
+A ChainRec instance for StateEither
 
 Added in v1.0.0
 
@@ -28,7 +28,7 @@ Added in v1.0.0
 **Signature**
 
 ```ts
-export declare const chainRec: <E, A, B>(a: A, f: (a: A) => TE.TaskEither<E, E.Either<A, B>>) => TE.TaskEither<E, B>
+export declare const chainRec: <R, E, A, B>(a: A, f: (a: A) => any) => any
 ```
 
 Added in v1.0.0
@@ -37,12 +37,12 @@ Added in v1.0.0
 
 ## ChainRec
 
-ChainRec for `TaskEither`
+ChainRec for `StateEither`
 
 **Signature**
 
 ```ts
-export declare const ChainRec: ChnRec.ChainRec2<'TaskEither'>
+export declare const ChainRec: ChnRec.ChainRec3<any>
 ```
 
 Added in v1.0.0
