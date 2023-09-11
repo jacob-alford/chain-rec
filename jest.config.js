@@ -1,5 +1,11 @@
 module.exports = {
-  collectCoverageFrom: ['src/**', '!src/IO.ts', '!src/Either.ts', '!src/Identity.ts'],
+  collectCoverageFrom: [
+    'src/**',
+    '!src/IO.ts',
+    '!src/Either.ts',
+    '!src/Identity.ts',
+    '!src/index.ts',
+  ],
   preset: 'ts-jest',
   testEnvironment: 'node',
   testMatch: ['<rootDir>/tests/**/*.ts'],

@@ -7,8 +7,8 @@
     "noEmit": true,
     "strict": true,
     "paths": {
-      "schemata-ts": ["./src/index.ts"],
-      "schemata-ts/*": ["./src/*"]
+      "@jacob-alford/chain-rec": ["./src/index.ts"],
+      "@jacob-alford/chain-rec/*": ["./src/*"]
     }
   }
 }
