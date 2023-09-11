@@ -2,14 +2,14 @@ import * as O from 'fp-ts/Option'
 import * as TO from 'fp-ts/TaskOption'
 
 import { ChainRec } from '../src/TaskOption'
-import { fib100, testFibM, testShortCircuitM } from '../test-utils/test-utils'
+import { fact100, testFactM, testShortCircuitM } from '../test-utils/test-utils'
 
 describe('TaskOption > chainRec', () => {
   it('calculates large factorials', async () => {
     const test = jest.fn()
-    const runTest = testFibM(ChainRec, TO.Pointed, test)
+    const runTest = testFactM(ChainRec, TO.Pointed, test)
     const result = await runTest(100n)()
-    expect(result).toStrictEqual(O.some(fib100))
+    expect(result).toStrictEqual(O.some(fact100))
     expect(test).toHaveBeenCalledTimes(100)
   })
   it('short circuits', async () => {

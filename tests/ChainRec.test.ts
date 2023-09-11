@@ -21,6 +21,7 @@ describe('forever', () => {
       count++
     })
     expect(testFn).toThrow()
+    expect(count).toStrictEqual(100)
   })
 })
 

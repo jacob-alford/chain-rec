@@ -2,14 +2,14 @@ import * as E from 'fp-ts/Either'
 import * as IOE from 'fp-ts/IOEither'
 
 import { ChainRec } from '../src/IOEither'
-import { fib100, testFibM, testShortCircuitM } from '../test-utils/test-utils'
+import { fact100, testFactM, testShortCircuitM } from '../test-utils/test-utils'
 
 describe('IOEither > chainRec', () => {
   it('calculates large factorials', () => {
     const test = jest.fn()
-    const runTest = testFibM(ChainRec, IOE.Pointed, test)
+    const runTest = testFactM(ChainRec, IOE.Pointed, test)
     const result = runTest(100n)()
-    expect(result).toStrictEqual(E.right(fib100))
+    expect(result).toStrictEqual(E.right(fact100))
     expect(test).toHaveBeenCalledTimes(100)
   })
   it('short circuits', () => {

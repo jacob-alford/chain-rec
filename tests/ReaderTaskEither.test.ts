@@ -2,14 +2,14 @@ import * as E from 'fp-ts/Either'
 import * as RTE from 'fp-ts/ReaderTaskEither'
 
 import { ChainRec } from '../src/ReaderTaskEither'
-import { fib100, testFibM, testShortCircuitM } from '../test-utils/test-utils'
+import { fact100, testFactM, testShortCircuitM } from '../test-utils/test-utils'
 
 describe('ReaderTaskEither > chainRec', () => {
   it('calculates large factorials', async () => {
     const test = jest.fn()
-    const runTest = testFibM(ChainRec, RTE.Pointed, test)
+    const runTest = testFactM(ChainRec, RTE.Pointed, test)
     const result = await runTest(100n)('')()
-    expect(result).toStrictEqual(E.right(fib100))
+    expect(result).toStrictEqual(E.right(fact100))
     expect(test).toHaveBeenCalledTimes(100)
   })
   it('short circuits', async () => {
