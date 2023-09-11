@@ -4,8 +4,8 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['<rootDir>/tests/**/*.ts'],
   moduleNameMapper: {
-    '^schemata-ts$': '<rootDir>/src/index.ts',
-    '^schemata-ts/(.*)$': '<rootDir>/src/$1',
+    '^@jacob-alford/chain-rec$': '<rootDir>/src/index.ts',
+    '^@jacob-alford/chain-rec/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
 }
