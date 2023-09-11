@@ -1,6 +1,6 @@
 ---
 title: StateReaderTaskEither.ts
-nav_order: 13
+nav_order: 15
 permalink: /state-reader-task-either/
 ---
 
