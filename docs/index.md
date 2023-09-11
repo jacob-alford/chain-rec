@@ -68,6 +68,45 @@ Chain-rec instances and utilities for fp-ts
 
 `ChainRec` is a typeclass that models tail-recursion in higher kinded types. However, `fp-ts` only exports instances for `Either`, `Array`, `ReadonlyArray`, `IO`, `Tuple`, and `ReadonlyTuple`. ChainRec can be particularly useful for effectful types such as Task, Reader, and State which is the purpose of this library, and to export various utilities from [purescript-tailrec](https://pursuit.purescript.org/packages/purescript-tailrec/6.1.0).
 
+## Example
+
+This example constructs a program in the `StateIO` monad and will print the numbers 1 through 10 to the console.
+
+### Imports
+
+This example uses the following imports:
+
+```ts
+import * as ChnRec from '@jacob-alford/chain-rec/ChainRec'
+import { ChainRec } from '@jacob-alford/chain-rec/StateIO'
+import * as Cons from 'fp-ts/Console'
+import { pipe } from 'fp-ts/function'
+import * as O from 'fp-ts/Option'
+import * as SIO from 'fp-ts-contrib/StateIO'
+```
+
+### Construction
+
+1. `SIO.get<number>()` - The program takes `number` as input
+2. `SIO.chainFirst(n => SIO.fromIO(Cons.log(n)))` - Prints the current number to the console
+3. `SIO.map(O.fromPredicate(n => n >= 10))` - Returns `none` if the number is less than 10
+4. `SIO.chainFirst(() => SIO.modify(n => n + 1))` - Increments the number by 1
+
+```ts
+const program = pipe(
+  SIO.get<number>(),
+  SIO.chainFirst(n => SIO.fromIO(Cons.log(n))),
+  SIO.map(O.fromPredicate(n => n >= 10)),
+  SIO.chainFirst(() => SIO.modify(n => n + 1)),
+)
+
+const runProgram = ChnRec.untilSome(ChainRec)(program)
+
+runProgram(0)()
+
+// prints: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+```
+
 ## Installation
 
 #### Yarn
