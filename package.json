@@ -1,6 +1,6 @@
 {
   "name": "@jacob-alford/chain-rec",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chain-rec instances and utilities for fp-ts",
   "homepage": "https://jacob-alford.github.io/chain-rec/",
   "repository": {
