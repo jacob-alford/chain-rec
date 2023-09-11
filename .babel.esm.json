@@ -6,7 +6,10 @@
       {
         "replacements": [
           { "original": "^fp-ts/(\\w*)$", "replacement": "fp-ts/es6/$1.js" },
-          { "original": "^io-ts/(\\w*)$", "replacement": "io-ts/es6/$1.js" }
+          {
+            "original": "^fp-ts-contrib/(\\w*)$",
+            "replacement": "fp-ts-contrib/es6/$1.js"
+          }
         ]
       }
     ]
