@@ -15,20 +15,152 @@ Added in v1.0.0
 
 <h2 class="text-delta">Table of contents</h2>
 
-- [utils](#utils)
-  - [Done (interface)](#done-interface)
-  - [Loop (interface)](#loop-interface)
-  - [Step (type alias)](#step-type-alias)
+- [Constructors](#constructors)
   - [done](#done)
   - [loop](#loop)
   - [loopIf](#loopif)
   - [loopUnless](#loopunless)
   - [stopIf](#stopif)
   - [stopUnless](#stopunless)
+- [Instance Methods](#instance-methods)
+  - [mapBoth](#mapboth)
+  - [mapIterant](#mapiterant)
+  - [mapResult](#mapresult)
+- [Model](#model)
+  - [Done (interface)](#done-interface)
+  - [Loop (interface)](#loop-interface)
+  - [Step (type alias)](#step-type-alias)
 
 ---
 
-# utils
+# Constructors
+
+## done
+
+Constructs a `Done` or `Right` value which instructs `ChainRec` to stop looping
+
+**Signature**
+
+```ts
+export declare const done: <A, E = never>(a: A) => Step<E, A>
+```
+
+Added in v1.0.0
+
+## loop
+
+Constructs a `Loop` or `Left` value which instructs `ChainRec` to keep looping
+
+**Signature**
+
+```ts
+export declare const loop: <E, A = never>(e: E) => Step<E, A>
+```
+
+Added in v1.0.0
+
+## loopIf
+
+Similar to `E.fromPredicate`, but the predicate is negated
+
+**Signature**
+
+```ts
+export declare const loopIf: <Iterant>(
+  shouldLoop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
+```
+
+Added in v1.0.0
+
+## loopUnless
+
+Alias for `stopIf`
+
+**Signature**
+
+```ts
+export declare const loopUnless: <Iterant>(
+  shouldStop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
+```
+
+Added in v1.0.0
+
+## stopIf
+
+Similar to `E.fromPredicate`
+
+**Signature**
+
+```ts
+export declare const stopIf: <Iterant>(
+  shouldStop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
+```
+
+Added in v1.0.0
+
+## stopUnless
+
+Alias for `loopIf`
+
+**Signature**
+
+```ts
+export declare const stopUnless: <Iterant>(
+  shouldLoop: (a: Iterant) => boolean,
+  iterate: (a: Iterant) => Iterant
+) => (a: Iterant) => Step<Iterant, Iterant>
+```
+
+Added in v1.0.0
+
+# Instance Methods
+
+## mapBoth
+
+Same as `E.bimap`
+
+**Signature**
+
+```ts
+export declare const mapBoth: <E, F, A, B>(
+  mapIterant: (e: E) => F,
+  mapResult: (a: A) => B
+) => (step: Step<E, A>) => Step<F, B>
+```
+
+Added in v1.1.0
+
+## mapIterant
+
+Same as `E.mapLeft`
+
+**Signature**
+
+```ts
+export declare const mapIterant: <E, F>(f: (e: E) => F) => <A>(step: Step<E, A>) => Step<F, A>
+```
+
+Added in v1.1.0
+
+## mapResult
+
+Same as `E.map`
+
+**Signature**
+
+```ts
+export declare const mapResult: <A, B>(f: (a: A) => B) => <E>(step: Step<E, A>) => Step<E, B>
+```
+
+Added in v1.1.0
+
+# Model
 
 ## Done (interface)
 
@@ -62,78 +194,6 @@ An alias for `Either`
 
 ```ts
 export type Step<E, A> = Loop<E> | Done<A>
-```
-
-Added in v1.0.0
-
-## done
-
-Constructs a `Done` or `Right` value which instructs `ChainRec` to stop looping
-
-**Signature**
-
-```ts
-export declare const done: <A, E = never>(a: A) => Step<E, A>
-```
-
-Added in v1.0.0
-
-## loop
-
-Constructs a `Loop` or `Left` value which instructs `ChainRec` to keep looping
-
-**Signature**
-
-```ts
-export declare const loop: <E, A = never>(e: E) => Step<E, A>
-```
-
-Added in v1.0.0
-
-## loopIf
-
-Similar to `E.fromPredicate`, but the predicate is negated
-
-**Signature**
-
-```ts
-export declare const loopIf: <A>(shouldLoop: (a: A) => boolean, iterate: (a: A) => A) => (a: A) => Step<A, A>
-```
-
-Added in v1.0.0
-
-## loopUnless
-
-Alias for `stopIf`
-
-**Signature**
-
-```ts
-export declare const loopUnless: <A>(shouldStop: (a: A) => boolean, iterate: (a: A) => A) => (a: A) => Step<A, A>
-```
-
-Added in v1.0.0
-
-## stopIf
-
-Similar to `E.fromPredicate`
-
-**Signature**
-
-```ts
-export declare const stopIf: <A>(shouldStop: (a: A) => boolean, iterate: (a: A) => A) => (a: A) => Step<A, A>
-```
-
-Added in v1.0.0
-
-## stopUnless
-
-Alias for `loopIf`
-
-**Signature**
-
-```ts
-export declare const stopUnless: <A>(shouldLoop: (a: A) => boolean, iterate: (a: A) => A) => (a: A) => Step<A, A>
 ```
 
 Added in v1.0.0

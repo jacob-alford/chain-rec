@@ -40,7 +40,7 @@ Added in v1.0.0
 
 ## ChainRec
 
-ChainRec for `ReaderEither`
+ChainRec for `ReaderTaskEither`
 
 **Signature**
 
